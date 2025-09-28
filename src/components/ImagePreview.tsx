@@ -22,9 +22,15 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
     };
 
     const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
-        if (e.target === e.currentTarget) {
-            hidePreview();
-        }
+        // Close when clicking anywhere in the preview container
+        // This includes both the backdrop and the image itself
+        hidePreview();
+    };
+
+    const handleImageClick = (e: React.MouseEvent<HTMLImageElement>) => {
+        // Prevent event bubbling and close the preview
+        e.stopPropagation();
+        hidePreview();
     };
 
     return (
@@ -58,8 +64,9 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
                 >
                     <img
                         src={fullImageSrc}
-                        style={{ width: '100%', height: '100%' }}
+                        style={{ width: '100%', height: '100%', cursor: 'pointer' }}
                         alt="Preview"
+                        onClick={handleImageClick}
                     />
                 </div>
             )}

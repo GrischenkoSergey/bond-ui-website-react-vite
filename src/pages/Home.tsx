@@ -229,18 +229,18 @@ const Home: React.FC = () => {
 
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word2A.png">
+                    <ImagePreview fullImageSrc="public/images/Word2A.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word2Asmall.gif"
+                                    src="public/images/Word2Asmall.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and QCB"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -259,18 +259,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word1blue.png">
+                    <ImagePreview fullImageSrc="public/images/Word1blue.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word1bluesmall.gif"
+                                    src="public/images/Word1bluesmall.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -289,18 +289,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word1336I2.png">
+                    <ImagePreview fullImageSrc="public/images/Word1336I2.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word1336I2small.gif"
+                                    src="public/images/Word1336I2small.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -322,18 +322,18 @@ const Home: React.FC = () => {
             {/* Second row of sections */}
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word3A.PNG">
+                    <ImagePreview fullImageSrc="public/images/Word3A.PNG">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word3Asmall.gif"
+                                    src="public/images/Word3Asmall.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and QCB"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -350,18 +350,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/AdvancedFind.gif" previewId="preview-container2">
+                    <ImagePreview fullImageSrc="public/images/AdvancedFind.gif" previewId="preview-container2">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word6small.gif"
+                                    src="public/images/Word6small.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -380,18 +380,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/QCBAddCommand2.gif" previewId="preview-container2">
+                    <ImagePreview fullImageSrc="public/images/QCBAddCommand2.gif" previewId="preview-container2">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/QCBAddCommandsmall.gif"
+                                    src="public/images/QCBAddCommandsmall.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -413,18 +413,18 @@ const Home: React.FC = () => {
             {/* Third row of sections */}
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word5.png">
+                    <ImagePreview fullImageSrc="public/images/Word5.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word5small.gif"
+                                    src="public/images/Word5small.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -442,18 +442,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word6.png" previewId="preview-container2">
+                    <ImagePreview fullImageSrc="public/images/Word6.png" previewId="preview-container2">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word6small2.gif"
+                                    src="public/images/Word6small2.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -469,18 +469,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word7.png">
+                    <ImagePreview fullImageSrc="public/images/Word7.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="images/Word7small.gif"
+                                    src="public/images/Word7small.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="images/3d-magnifier.svg"
+                                    src="public/images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"

@@ -635,35 +635,30 @@ body.light-theme footer .copybox2 {
         overflow-x: auto;
         overflow-y: auto;
         height: 40vh;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
     }
 
     .image-wrapper img.slide-image {
         width: 1336px;
         height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: left top;
     }
 
     .image-wrapper img.slide-image2 {
         width: 1336px;
         height: auto;
+        min-height: 100%;
+        object-fit: cover;
+        object-position: left top;
     }
 
     .scrollmenu {
         flex-direction: column;
         display: none;
     }
-
-    /* .scrollmenu.show {
-        top: 60px;
-        right: 0;
-        position: absolute;
-        width: 100vw;
-        background: #7a0404;
-        display: flex;
-        justify-content: end;
-        padding: 30px 0;
-        z-index: 10;
-        text-shadow: 2px 2px #000;
-    } */
 
     .scrollmenu.show {
         position: fixed;
@@ -676,17 +671,11 @@ body.light-theme footer .copybox2 {
         padding: 0;
         border-radius: 12px;
         box-shadow: 0 0 11px 0 #aaaaaa;
-        /* box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); */
         z-index: 1000;
         border: 1px solid rgba(255, 255, 255, 0.1);
         backdrop-filter: blur(10px);
         animation: slideInFromTop 0.3s ease-out;
     }
-
-    /* div.scrollmenu.show a {
-        text-align: left;
-        padding: 15px;
-    } */
 
     div.scrollmenu.show a,
     div.scrollmenu.show .theme-toggle-btn {
@@ -700,19 +689,10 @@ body.light-theme footer .copybox2 {
         font-weight: 500;
         position: relative;
         overflow: hidden;
-        /* Default to block, will be overridden in landscape */
         display: block;
+        font-size: 1.1rem;
+        font-family: "ADLaM Display", sans-serif;
     }
-
-    /* .menu-toggle {
-        display: block;
-        font-size: 30px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 10px;
-        color: white;
-    } */
 
     .menu-toggle {
         display: block;
@@ -750,10 +730,11 @@ body.light-theme footer .copybox2 {
     }
 
     .sectionrow {
-        display: none;
+        display: flex;
         width: 100%;
         flex-direction: column;
         gap: 40px;
+        margin: 20px 0;
     }
 
     .sectionheadtext {
@@ -783,6 +764,27 @@ body.light-theme footer .copybox2 {
 
     .container {
         min-height: auto;
+    }
+
+    /* Ensure sub-sections have proper styling in mobile */
+    .sub-section {
+        background-color: #28013e;
+        transition: background-color 1s ease;
+        min-height: 200px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+
+    .sub-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .sub-section p {
+        font-size: 1.1rem;
+        line-height: 1.4;
+        margin-bottom: 10px;
     }
 }
 
@@ -820,11 +822,13 @@ body.light-theme footer .copybox2 {
     }
 }
 
+/* Ensure theme toggle button inherits all menu item properties */
 .theme-toggle-btn {
-    color: #fff;
-    /* White in dark theme */
+    background: none !important;
+    border: none !important;
+    cursor: pointer;
     transition: color 1s ease;
-    /* Smooth transition */
+    color: #fff;
 }
 
 body.light-theme .theme-toggle-btn {
@@ -922,17 +926,12 @@ div.scrollmenu.show a:first-child {
     div.scrollmenu.show a,
     div.scrollmenu.show .theme-toggle-btn {
         padding: 10px 15px;
-        /* Reduced from 15px 20px */
-        font-size: 0.95rem;
-        /* Slightly smaller font */
+        font-size: 0.95rem !important;
+        /* Force consistent font size */
         line-height: 1.4;
-        /* Better line height for vertical centering */
         display: flex;
-        /* Use flexbox for better alignment */
         align-items: center;
-        /* Center content vertically */
         min-height: 40px;
-        /* Ensure minimum height for touch targets */
     }
 }
 
@@ -951,17 +950,12 @@ div.scrollmenu.show a:first-child {
     div.scrollmenu.show a,
     div.scrollmenu.show .theme-toggle-btn {
         padding: 6px 12px;
-        /* Very compact padding */
-        font-size: 0.9rem;
-        /* Smaller font */
+        font-size: 0.9rem !important;
+        /* Force consistent smaller font */
         line-height: 1.3;
-        /* Tight but readable line height */
         display: flex;
-        /* Use flexbox for alignment */
         align-items: center;
-        /* Center content vertically */
         min-height: 32px;
-        /* Smaller minimum height for very short screens */
     }
 
     /* Ensure first/last items maintain border radius */
@@ -1005,6 +999,7 @@ div.scrollmenu.show a:first-child {
         display: flex !important;
         align-items: center !important;
         justify-content: flex-start !important;
+        font-size: 1.1rem !important;
     }
 }
 
