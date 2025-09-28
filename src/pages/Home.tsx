@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Layout from '../components/Layout';
-// import Carousel from '../components/Carousel';
 import ImagePreview from '../components/ImagePreview';
 import { Link } from 'react-router-dom';
 
