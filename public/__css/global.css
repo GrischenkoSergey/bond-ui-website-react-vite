@@ -1,0 +1,865 @@
+/* Reset and General Styles */
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+  /* Important for responsive layouts */
+}
+
+body {
+  background-color: #031a46;
+  color: #fff;
+  transition: background-color 1s ease, color 1s ease;
+  max-width: 1920px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font-family: "AR One Sans", sans-serif;
+  /* Prevent horizontal scrollbar */
+}
+
+html {
+  margin: 0;
+  font-size: 16px;
+}
+
+a:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 8px 0;
+  color: #000;
+}
+
+header #logo,
+header #logo2 {
+  display: flex;
+  align-items: center;
+}
+
+header #logo2 {
+  display: none;
+}
+
+header #logo a,
+header #logo2 a {
+  margin: 0 0 0 30px;
+}
+
+header #logo a:hover,
+header #logo a:active,
+header #logo2 a:hover,
+header #logo2 a:active {
+  margin: 3px 0 0 32px;
+}
+
+header #heading {
+  display: flex;
+  align-items: center;
+  margin-right: 5%;
+}
+
+header #heading p {
+  font: bold 1rem Arial, Sans-serif;
+  color: #000;
+  margin: 0 0 4px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#backtop {
+  position: fixed;
+  left: auto;
+  right: 20px;
+  bottom: 20px;
+  outline: none;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  background-color: rgba(92, 6, 9, 0.84);
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s linear;
+  z-index: 999999;
+  font-size: 2em;
+  opacity: 1;
+  display: none;
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: #fff;
+  transition: color 1s ease;
+  text-align: center;
+  text-decoration: none;
+  font-family: "ADLaM Display", sans-serif;
+  font-size: 1.1rem;
+}
+
+div.scrollmenu a:hover {
+  text-decoration: underline;
+}
+
+/* Underlines the current page link in both the navbar and the footer links, as long as first id is applied to body tag */
+#home a.homelink,
+#addinmanual a.addinmanuallink,
+#programpicker a.programpickerlink,
+#ppmanual a.ppmanuallink,
+#support a.supportlink,
+#buynow a.buynowlink,
+#terms a.termslink,
+#privacypolicy a.privacypolicylink,
+#privacynotice a.privacynoticelink,
+#refundpolicy a.refundpolicylink {
+  text-decoration: underline;
+}
+
+/* main section */
+main {
+  flex: 1;
+  padding: 15px;
+
+  background-color: #031a46;
+  transition: background-color 1s ease;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  z-index: 0;
+}
+
+main h1,
+main h2,
+main p {
+  margin-bottom: 0.5vh;
+}
+
+main h1 {
+  font-size: 1.8rem;
+}
+
+main h2 {
+  font-size: 1.4rem;
+  color: #ffff66;
+  transition: color 1s ease;
+}
+
+main .sectionmanual h1 {
+  font-size: 1.7rem;
+  margin: 30px 0 20px 30px;
+}
+
+main .sectionmanual h2 {
+  font-size: 1.6rem;
+  margin: 30px 0 0 30px;
+}
+
+.sectionmanual ul {
+  margin: 0 0 30px 30px;
+}
+
+.sectionmanual p {
+  margin: 0 30px 10px 30px;
+}
+
+.sectionmanual .manualdownloadaddin {
+  margin: 10px 0 20px 20px;
+}
+
+main h2.price {
+  font-size: 2.5em;
+  color: #f8ff2d;
+}
+
+main h3 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+main p {
+  font-size: 1.2rem;
+}
+
+main ul {
+  margin-bottom: 20px;
+}
+
+main li {
+  font-size: 1.3rem;
+  color: #50bafc;
+}
+
+main li:before {
+  font-family: "Webdings";
+  content: "=  ";
+}
+
+main li:hover {
+  text-decoration: underline;
+}
+
+main a {
+  color: #50bafc;
+  font-size: 1.3rem;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+
+#preview-container,
+#preview-container2 {
+  visibility: hidden;
+  position: fixed;
+  opacity: 0;
+  z-index: 150;
+  box-shadow: 1px 2px 2px 2px;
+  width: 1356px;
+  height: auto;
+  overflow: auto;
+  max-height: 80vh;
+  top: 50%;
+  transition: all 400ms;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  padding: 10px;
+  background-color: white;
+}
+
+#preview-container2 {
+  width: 516px;
+}
+
+#preview-container img,
+#preview-container2 img {
+  width: 100%;
+  height: 100%;
+}
+
+/* end main */
+
+/* Buy Now and Download Buttons */
+
+.buynowbar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buynow,
+.buynow:hover {
+  width: 314px;
+  height: 61px;
+  background: url(/assets/images/buynow2499.png);
+}
+
+.buynow:hover {
+  background: url(/assets/images/buynow2499.png) 0 -61px;
+}
+
+.buynowpp,
+.buynowpp:hover {
+  width: 287px;
+  height: 54px;
+  background: url(/assets/images/buynow1499.png);
+}
+
+.buynowpp:hover {
+  background: url(/assets/images/buynow1499.png) 0 -54px;
+}
+
+
+
+
+.downloadaddin,
+.downloadaddin:hover,
+.manualdownloadaddin {
+  /* display: block; */
+  width: 314px;
+  height: 61px;
+  background: url(/assets/images/addindownload.png);
+}
+
+.downloadaddin:hover,
+.manualdownloadaddin:hover {
+  background: url(/assets/images/addindownload.png) 0 -61px;
+}
+
+@media screen and (max-width: 560px) {
+  .buynowbar {
+    flex-direction: column;
+    height: 250px;
+    align-items: center;
+  }
+}
+
+/* End Buy Now and Download Buttons */
+
+/* sections and image slider */
+
+.sectionhead {
+  width: 99%;
+  height: 630px;
+  overflow: hidden;
+  display: flex;
+  background: url("../images/banner.jpg");
+  border-radius: 10px;
+  box-shadow: 0 0 7px 3px #8e8e8e;
+}
+
+.sectionheadtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: 25%;
+  color: #fff;
+  padding: 20px 20px 0 20px;
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+.sectionheadtext h1 {
+  font-size: 2.4rem;
+  color: #f8ff2d;
+}
+
+.sectionheadtext h2 {
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.sectionheadtext p {
+  font-size: 1.3rem;
+  margin: 10px;
+}
+
+.sectionrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.section,
+.sectionmanual {
+  width: 30%;
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #efeeee;
+  box-shadow: 0 0 11px 0 #aaaaaa;
+}
+
+.sub-section {
+  background-color: #28013e;
+  transition: background-color 1s ease;
+  height: calc(100% - 253px);
+  min-height: 253px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 30px;
+}
+
+.sectionmanual {
+  width: 99%;
+  background-color: #28013e;
+  /* padding: 30px 50px; */
+}
+
+.sectionmanual img {
+  margin: 30px auto 30px;
+}
+
+.image-wrapper {
+  position: relative;
+  transition: all 0.5s;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.image-container {
+  width: 100%;
+}
+
+.image-container img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+}
+
+.Magnifying {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 11;
+}
+
+.slide-image {
+  width: auto;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: left;
+}
+
+.slide-image2 {
+  width: auto;
+  height: 253px;
+  display: block;
+  object-fit: cover;
+  object-position: top left;
+}
+
+/* .slide-image2:hover {
+  height: auto;
+} */
+
+/* end sections and image slider */
+
+/* footer */
+footer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 3vh 0;
+  background: url("../images/footerback.png") 0 -10px;
+  background-color: #031a46;
+  transition: background-color 1s ease;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 100;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer li {
+  margin: 0 0 4px 0;
+  font-size: 1.3em;
+}
+
+footer #copy {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-family: "ADLaM Display", sans-serif;
+  margin: 0 20px 0 0;
+}
+
+footer #copy img {
+  margin: 0 20px 0 0;
+}
+
+footer .copybox2 {
+  display: none;
+}
+
+footer #asp {
+  flex: 1;
+}
+
+footer p {
+  margin: 0;
+  padding: 0;
+  font-size: 1.3em;
+}
+
+#footernav {
+  display: flex;
+  flex: 1;
+  margin: 25px 5px 25px 0;
+  color: #fff;
+  justify-content: center;
+}
+
+#footernav ul {
+  display: flex;
+  flex-direction: column;
+  font-family: "ADLaM Display", sans-serif;
+}
+
+/* end footer */
+
+/* global classes */
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.scrollmenu {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1.5vw;
+}
+
+.scrollmenu a {
+  /* padding: 10px; */
+  /* text-decoration: none; */
+  /* color: black; */
+  /* font-size: 16px; */
+}
+
+/* Hide the hamburger button by default */
+.menu-toggle {
+  display: none;
+}
+
+/* end global styles */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1151px) {
+  #mobile-view {
+    display: none;
+  }
+
+  .image-wrapper {
+    /* width: 850px; */
+    /* height: 253px; */
+    right: 0;
+    top: 0;
+  }
+
+  .slide-image {
+    width: 100%;
+    height: 253px;
+    display: block;
+    object-fit: cover;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 1150px) {
+  header #logo img {
+    max-width: 50vw;
+    height: auto;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  #heading {
+    margin-left: 20px;
+  }
+
+  .sectionhead {
+    display: none;
+  }
+
+  .section {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .image-wrapper,
+  .sub-section {
+    width: 100%;
+  }
+
+  .image-wrapper {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 40vh;
+  }
+
+  .image-wrapper img.slide-image {
+    width: 1336px;
+    height: auto;
+  }
+
+  .image-wrapper img.slide-image2 {
+    width: 1336px;
+    height: auto;
+  }
+
+  .scrollmenu {
+    flex-direction: column;
+    display: none;
+    /* Hide the menu by default on mobile */
+  }
+
+  .scrollmenu.show {
+    top: 90px;
+    right: 10px;
+    position: fixed;
+    width: 280px;
+    background: #7a0404;
+    display: flex;
+    /* Show the menu when toggled */
+    justify-content: end;
+    padding: 30px 0;
+    z-index: 10;
+    text-shadow: 2px 2px #000;
+    max-width: calc(100vw - 20px);
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+  }
+
+  .scrollmenu.show::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .scrollmenu.show::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollmenu.show::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollmenu.show::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
+  }
+
+  /* Light theme scrollbar */
+  body.light-theme .scrollmenu.show {
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+  }
+
+  body.light-theme .scrollmenu.show::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  body.light-theme .scrollmenu.show::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+
+  div.scrollmenu.show a {
+    text-align: left;
+    padding: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+  }
+
+  .scrollmenu a {
+    padding: 15px;
+    font-size: 18px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  footer #copy {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .sectionrow {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  #preview-container {
+    display: none;
+  }
+
+  .sectionheadtext {
+    width: 100%;
+  }
+
+  .sectionheadtext h1 {
+    font-size: 2em;
+  }
+
+  .sectionheadtext h2 {
+    font-size: 1.5em;
+  }
+
+  .mobile-header-text {
+    background: radial-gradient(circle at 50% 100%, #50bafc, #031a46);
+    padding: 20px;
+    /* box-shadow: 1px -1px 2px 1px; */
+    text-align: center;
+    color: #fff;
+  }
+
+  .mobile-header-text h1:first-child {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+
+  .container {
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .mobile-header-text h1:first-child {
+    font-size: 1.8rem;
+  }
+
+  .mobile-header-text h1:nth-child(2),
+  .mobile-header-text h1:last-child {
+    font-size: 1.3rem;
+  }
+
+  footer {
+    padding-bottom: env(SAFE-AREA-INSET-BOTTOM, 20px);
+  }
+}
+
+@media (orientation: landscape) and (max-width: 1151px) {
+  .mobile-header-text h1 {
+    font-size: 1.3rem !important;
+  }
+}
+
+/* Responsive adjustments for very small screens */
+@media screen and (max-width: 320px) {
+  .scrollmenu.show {
+    width: calc(100vw - 20px);
+    /* Full width minus margins on very small screens */
+    right: 10px;
+    left: 10px;
+    /* Center the menu */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .scrollmenu.show {
+    width: 260px;
+    /* Slightly smaller for small screens */
+    right: 10px;
+  }
+
+  div.scrollmenu.show a,
+  div.scrollmenu.show .theme-toggle-btn {
+    padding: 12px 15px;
+    /* Reduce padding slightly for smaller screens */
+    font-size: 1rem;
+    /* Slightly smaller font */
+  }
+}
+
+/* Landscape orientation adjustments */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+  .scrollmenu.show {
+    top: 60px;
+    /* Further reduced top spacing in landscape */
+    max-height: calc(100vh - 80px);
+    /* More aggressive height constraint */
+    overflow-y: auto;
+    /* Allow scrolling if needed */
+  }
+
+  /* Reduce menu item padding in landscape */
+  div.scrollmenu.show a,
+  div.scrollmenu.show .theme-toggle-btn {
+    padding: 10px 15px;
+    /* Reduced from 15px 20px */
+    font-size: 0.95rem;
+    /* Slightly smaller font */
+    line-height: 1.4;
+    /* Better line height for vertical centering */
+    display: flex;
+    /* Use flexbox for better alignment */
+    align-items: center;
+    /* Center content vertically */
+    min-height: 40px;
+    /* Ensure minimum height for touch targets */
+  }
+}
+
+/* Very short landscape screens (phones in landscape) */
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  .scrollmenu.show {
+    top: 50px;
+    /* Even less top spacing */
+    max-height: calc(100vh - 70px);
+    /* Maximum available space */
+    border-radius: 8px;
+    /* Slightly smaller border radius */
+  }
+
+  /* More compact menu items for very short screens */
+  div.scrollmenu.show a,
+  div.scrollmenu.show .theme-toggle-btn {
+    padding: 6px 12px;
+    /* Very compact padding */
+    font-size: 0.9rem;
+    /* Smaller font */
+    line-height: 1.3;
+    /* Tight but readable line height */
+    display: flex;
+    /* Use flexbox for alignment */
+    align-items: center;
+    /* Center content vertically */
+    min-height: 32px;
+    /* Smaller minimum height for very short screens */
+  }
+
+  /* Ensure first/last items maintain border radius */
+  div.scrollmenu.show a:first-child {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  div.scrollmenu.show a:last-child,
+  div.scrollmenu.show .theme-toggle-btn:last-child {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+  }
+}
+
+/* Tablet landscape mode */
+@media screen and (min-height: 501px) and (max-height: 800px) and (orientation: landscape) {
+  .scrollmenu.show {
+    top: 80px;
+    /* Standard spacing for tablets */
+    max-height: calc(100vh - 100px);
+    /* Comfortable height limit */
+  }
+}

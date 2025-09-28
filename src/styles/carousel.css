@@ -1,0 +1,519 @@
+.carousel-mobile {
+    position: relative;
+    box-shadow: 1px 2px 2px 2px;
+    border-radius: 10px;
+    height: 60vh;
+    /* Increased from 50vh to 70vh */
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.carousel {
+    position: relative;
+    width: 1024px;
+    height: 630px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slide img {
+    width: 100%;
+    height: 630px;
+    object-fit: cover;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade.active {
+    animation: fadeIn 1s ease;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in.active {
+    animation: slideIn 1s ease;
+}
+
+@keyframes breakEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0);
+    }
+}
+
+.break.active {
+    animation: breakEffect 1s ease;
+}
+
+@keyframes dustEffect {
+    0% {
+        filter: blur(10px) brightness(2);
+        opacity: 0;
+    }
+
+    100% {
+        filter: blur(0) brightness(1);
+        opacity: 1;
+    }
+}
+
+.dust.active {
+    animation: dustEffect 1s ease;
+}
+
+@keyframes zoomEffect {
+    from {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.zoom.active {
+    animation: zoomEffect 1s ease;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotateY(90deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateY(0deg);
+        opacity: 1;
+    }
+}
+
+.rotate.active {
+    animation: rotateIn 1s ease;
+}
+
+@keyframes flipIn {
+    from {
+        transform: rotateX(-90deg);
+        opacity: 0;
+    }
+
+    to {
+        transform: rotateX(0);
+        opacity: 1;
+    }
+}
+
+.flip.active {
+    animation: flipIn 1s ease;
+}
+
+@keyframes skewIn {
+    0% {
+        transform: skewX(20deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: skewX(0);
+        opacity: 1;
+    }
+}
+
+.skew.active {
+    animation: skewIn 1s ease;
+}
+
+@keyframes rotateUp {
+    0% {
+        transform: rotate(-15deg) translateY(30px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: rotate(0) translateY(0);
+        opacity: 1;
+    }
+}
+
+.rotate-up.active {
+    animation: rotateUp 1s ease;
+}
+
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+
+    70% {
+        transform: scale(0.9);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bounce.active {
+    animation: bounceIn 1s ease;
+}
+
+/* end slide animation */
+.carousel-thumbnails {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    gap: 10px;
+    z-index: 100;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.carousel-thumbnails img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.carousel-thumbnails img.active-thumb {
+    opacity: 1;
+    border-color: #333;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    font-size: 2em;
+    cursor: pointer;
+    z-index: 200;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-thumbnails-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+}
+
+.carousel-thumbnails {
+    display: flex;
+    gap: 10px;
+    transition: transform 0.3s ease;
+    padding: 0 10px;
+}
+
+.carousel-thumbnails img {
+    width: 100px;
+    height: 60px;
+    object-fit: cover;
+    cursor: pointer;
+    opacity: 0.6;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-thumbnails img.active-thumb {
+    opacity: 1;
+    border-color: #333;
+}
+
+.description-item-container {
+    position: relative;
+}
+
+.description-item {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.description-item.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.sectionhead .description-item {
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 1151px) {
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+        /* Removed top positioning - handled by mobile-specific styles */
+    }
+
+    .carousel-thumbnails img {
+        width: 60px;
+        height: 40px;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        height: calc(60vh - 200px);
+        overflow: hidden;
+        /* Prevents scrolling for proper button positioning */
+    }
+
+    /* Added specific mobile carousel button styles */
+    .carousel-mobile .carousel-btn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+        top: 50%;
+        /* Perfect vertical center */
+        transform: translateY(-50%);
+        /* Offset by half height for true centering */
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        z-index: 200;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .carousel-container .carousel-track img {
+        background-position: top left;
+        width: 100%;
+        height: 100%;
+    }
+
+    .carousel-mobile .carousel-btn.prev {
+        left: 10px;
+    }
+
+    .carousel-mobile .carousel-btn.next {
+        right: 10px;
+    }
+
+    .carousel-mobile .carousel-btn:hover {
+        background: rgba(0, 0, 0, 0.8);
+        transform: translateY(-50%) scale(1.1);
+        /* Maintains centering while scaling */
+    }
+
+    .description-item-container {
+        position: relative;
+        background-color: white;
+        display: flex;
+        width: 100%;
+        /* height: 200px; */
+        height: 100%;
+        /* Increased from 150px to 200px */
+    }
+
+    .description-item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        /* Increased padding for better readability */
+        opacity: 0;
+        transition: opacity 1s ease;
+        color: #000;
+        overflow-y: auto;
+        /* Allow scrolling if text is still too long */
+        font-size: 1rem;
+        /* Ensure readable font size */
+        line-height: 1.4;
+        /* Better line spacing */
+    }
+
+    .carousel-functions .carousel-thumbnails {
+        bottom: 160px;
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        display: block;
+        transition: opacity 1s ease;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 1151px) {
+    .carousel-mobile {
+        height: 95vh;
+        /* Increased for landscape mode */
+    }
+
+    .carousel-thumbnails img {
+        width: 60px;
+        height: 40px;
+    }
+
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        height: calc(95vh - 150px);
+        overflow: hidden;
+        /* Changed for proper button positioning */
+    }
+
+    /* Landscape-specific button positioning */
+    .carousel-mobile .carousel-btn {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5em;
+        top: 50%;
+        /* Perfect vertical center */
+        transform: translateY(-50%);
+        /* True centering */
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        z-index: 200;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .carousel-container .carousel-track img {
+        background-position: top left;
+        width: auto;
+        height: 100%;
+    }
+
+    .description-item-container {
+        position: relative;
+        background-color: white;
+        display: flex;
+        width: 100%;
+        height: 150px;
+        /* Maintained reasonable height for landscape */
+    }
+
+    .description-item {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 15px;
+        opacity: 0;
+        transition: opacity 1s ease;
+        color: #000;
+        overflow-y: auto;
+        font-size: 0.9rem;
+        /* Slightly smaller for landscape */
+        line-height: 1.3;
+    }
+
+    .description-item.active {
+        opacity: 1;
+        z-index: 2;
+    }
+
+    .carousel-functions .carousel-thumbnails {
+        bottom: 160px;
+        /* Adjusted for landscape */
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        display: block;
+        transition: opacity 1s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    body {
+        padding-right: env(safe-area-inset-right, 16px);
+    }
+}

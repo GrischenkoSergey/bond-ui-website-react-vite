@@ -1,0 +1,65 @@
+/* Light styles */
+
+body {
+  background-color: #e7f4fc;
+  color: #000;
+  transition: background-color 1s ease, color 1s ease;
+}
+
+header #logo {
+  display: none;
+}
+
+header #logo2 {
+  display: flex;
+  align-items: center;
+}
+
+/* main section */
+main {
+  background-color: #e7f4fc;
+  transition: background-color 1s ease;
+}
+
+main h2 {
+  font-size: 1.4rem;
+  color: #3c3c00;
+  transition: color 1s ease;
+}
+
+main li, main a {
+  color: #045f97;
+  transition: color 1s ease;
+}
+
+.sub-section,
+.sectionmanual {
+  background-color: #eee6c6;
+  transition: background-color 1s ease;
+}
+
+div.scrollmenu a {
+  color: #000;
+  transition: color 1s ease;
+}
+
+footer {
+  background: url("../images/footerbacklight.png") 0 -10px;
+  background-color: #e7f4fc;
+  transition: background 1s ease;
+}
+
+footer a {
+  color: #000;
+  transition: color 1s ease;
+}
+
+footer .copybox {
+  display: none;
+  transition: display 1s ease;
+}
+footer .copybox2 {
+  display: flex;
+  align-items: center;
+  transition: display 1s ease;
+}
