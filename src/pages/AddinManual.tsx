@@ -44,7 +44,7 @@ const AddinManual: React.FC = () => {
                 <p>The Ribbon is initially hidden, in 'Show tabs only' mode.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/manual1.gif"
+                        src="images/manual1.gif"
                         alt="The Ribbon is hidden in 'Tabs only mode' initially."
                     />
                 </div>
@@ -52,7 +52,7 @@ const AddinManual: React.FC = () => {
                 <p>To permanently display the Ribbon, click on any Ribbon tab, then click on the down arrow in the lower right corner of the Ribbon, to access the Ribbon display menu. Then click on 'Always shown Ribbon'.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/manual2.gif"
+                        src="images/manual2.gif"
                         alt="Click on down arrow. Click on 'Always show Ribbon'."
                     />
                 </div>
@@ -66,7 +66,7 @@ const AddinManual: React.FC = () => {
                 <p>For example, the 'Home' drop down menu contains the commands in the 'Home' tab of the Ribbon.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/manual3.gif"
+                        src="images/manual3.gif"
                         alt="Drop down menu."
                     />
                 </div>
@@ -77,14 +77,14 @@ const AddinManual: React.FC = () => {
                 <p>Press the function key of the command you want to use.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/DialogueBox1.gif"
+                        src="images/DialogueBox1.gif"
                         alt="Dialogue Box."
                     />
                 </div>
                 <p>Multi toggle buttons - press the function key repeatedly until you have selected the option you want.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/multitoggle.gif"
+                        src="images/multitoggle.gif"
                         alt="Multi toggle button."
                     />
                 </div>
@@ -92,7 +92,7 @@ const AddinManual: React.FC = () => {
                 <p>Press Esc to move the previous sub window, or to close the dialogue box if you are currently in the first sub window.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/DialogueBox2.gif"
+                        src="images/DialogueBox2.gif"
                         alt="Dialogue Box."
                     />
                 </div>
@@ -103,14 +103,14 @@ const AddinManual: React.FC = () => {
                 <p>The Bond Add In comes with built in Quick Command Bars (QCBs). You can edit QCBs by pressing F12 F10 Select QCBs.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/SelectQCB.gif"
+                        src="images/SelectQCB.gif"
                         alt="Select Quick Command Bars."
                     />
                 </div>
                 <p>Hold down the function key of the QCB you want to edit. The 'Edit Custom Quick Command Bar' window will open.</p>
                 <div className="manual-image-container">
                     <img
-                        src="public/images/EditCustom.gif"
+                        src="images/EditCustom.gif"
                         alt="Edit Custom Quick Command Bar."
                     />
                 </div>

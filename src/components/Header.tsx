@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link /*, useLocation*/ } from 'react-router-dom';
 import { useTheme } from '../contexts/ThemeContext';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [menuStyle, setMenuStyle] = useState<React.CSSProperties>({});
-  const location = useLocation();
+  // const location = useLocation();
   const { isDarkMode, toggleTheme } = useTheme();
 
   // Dynamic positioning for menu

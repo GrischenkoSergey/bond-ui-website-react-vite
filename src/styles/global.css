@@ -254,7 +254,7 @@ main a {
 .buynow:hover {
     width: 314px;
     height: 61px;
-    background: url(/public/images/buynow2499.png);
+    background: url(/images/buynow2499.png);
     display: block;
     text-indent: -9999px;
     border: none;
@@ -262,14 +262,14 @@ main a {
 }
 
 .buynow:hover {
-    background: url(/public/images/buynow2499.png) 0 -61px;
+    background: url(/images/buynow2499.png) 0 -61px;
 }
 
 .buynowpp,
 .buynowpp:hover {
     width: 287px;
     height: 54px;
-    background: url(/public/images/buynow1499.png);
+    background: url(/images/buynow1499.png);
     display: block;
     text-indent: -9999px;
     border: none;
@@ -277,7 +277,7 @@ main a {
 }
 
 .buynowpp:hover {
-    background: url(/public/images/buynow1499.png) 0 -54px;
+    background: url(/images/buynow1499.png) 0 -54px;
 }
 
 .downloadaddin,
@@ -285,7 +285,7 @@ main a {
 .manualdownloadaddin {
     width: 314px;
     height: 61px;
-    background: url(/public/images/addindownload.png);
+    background: url(/images/addindownload.png);
     display: block;
     text-indent: -9999px;
     border: none;
@@ -294,7 +294,7 @@ main a {
 
 .downloadaddin:hover,
 .manualdownloadaddin:hover {
-    background: url(/public/images/addindownload.png) 0 -61px;
+    background: url(/images/addindownload.png) 0 -61px;
 }
 
 @media screen and (max-width: 560px) {
@@ -312,7 +312,7 @@ main a {
     height: 630px;
     overflow: hidden;
     display: flex;
-    background: url("/public/images/banner.jpg");
+    background: url("/images/banner.jpg");
     border-radius: 10px;
     box-shadow: 0 0 7px 3px #8e8e8e;
 }
@@ -507,7 +507,7 @@ footer {
     flex-direction: row;
     flex-wrap: nowrap;
     margin: 3vh 0;
-    background: url("/public/images/footerback.png") 0 -10px;
+    background: url("/images/footerback.png") 0 -10px;
     background-color: #031a46;
     transition: background-color 1s ease;
 }
@@ -651,7 +651,7 @@ body.light-theme div.scrollmenu a {
 }
 
 body.light-theme footer {
-    background: url("/public/images/footerbacklight.png") 0 -10px;
+    background: url("/images/footerbacklight.png") 0 -10px;
     background-color: #e7f4fc;
     transition: background 1s ease;
 }

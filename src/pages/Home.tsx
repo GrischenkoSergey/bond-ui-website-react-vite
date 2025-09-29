@@ -3,93 +3,93 @@ import Layout from '../components/Layout';
 import ImagePreview from '../components/ImagePreview';
 import { Link } from 'react-router-dom';
 
-interface CarouselSlide {
-    image: string;
-    thumbnail: string;
-    description: string;
-}
+// interface CarouselSlide {
+//     image: string;
+//     thumbnail: string;
+//     description: string;
+// }
 
-interface CarouselProps {
-    slides: CarouselSlide[];
-    autoPlay?: boolean;
-    autoPlayInterval?: number;
-    className?: string;
-}
+// interface CarouselProps {
+//     slides: CarouselSlide[];
+//     autoPlay?: boolean;
+//     autoPlayInterval?: number;
+//     className?: string;
+// }
 
 const Home: React.FC = () => {
     console.log('Home component rendering'); // Test console output
 
     const carouselSlides = [
         {
-            image: "public/images/carousel/Word1024x630start.png",
-            thumbnail: "public/images/carousel/Word1024x630startsmall.jpg",
+            image: "/images/carousel/Word1024x630start.png",
+            thumbnail: "/images/carousel/Word1024x630startsmall.jpg",
             description: "Use function keys to select drop down menus, menu commands, and dialogue box commands. Custom Quick Command Bars (QCB)- access commands with a single function key, customise your own Quick Command Bars. Custom Keyboard Drop Down Menu (KDDM)- add commands to 48 keyboard keys on one menu, 12 KDDMs available, mapped to function keys."
         },
         {
-            image: "public/images/carousel/Word1024x630q.png",
-            thumbnail: "public/images/carousel/Word1024x630qsmall.jpg",
+            image: "/images/carousel/Word1024x630q.png",
+            thumbnail: "/images/carousel/Word1024x630qsmall.jpg",
             description: "Use function keys to access drop down menus and menu commands."
         },
         {
-            image: "public/images/carousel/Word1024x630c2.png",
-            thumbnail: "public/images/carousel/Word1024x630c2small.jpg",
+            image: "images/carousel/Word1024x630c2.png",
+            thumbnail: "images/carousel/Word1024x630c2small.jpg",
             description: "Keyboard Drop Down Menu (KDDM) - fully customisable keyboard menu. 12 KDDMs to customise, each with 48 commands. Map any command to any key. Even map previously opened documents to any key. Rename KDDM menu titles - e.g. change \"F1 File\" to \"F1 Main\"."
         },
         {
-            image: "public/images/carousel/Word1024x630d2.png",
-            thumbnail: "public/images/carousel/Word1024x630d2small.jpg",
+            image: "images/carousel/Word1024x630d2.png",
+            thumbnail: "images/carousel/Word1024x630d2small.jpg",
             description: "Quick Command Bars (QCB) - fully customisable command bars. Create custom command bars with 11 commands per bar, each command instantly accessible with just one function key press. Easily change titles of QCBs. Display up to 12 QCBs at one time - 132 commands, all accessible with the mouse too!"
         },
         {
-            image: "public/images/carousel/Word1024x630n.png",
-            thumbnail: "public/images/carousel/Word1024x630nsmall.jpg",
+            image: "images/carousel/Word1024x630n.png",
+            thumbnail: "images/carousel/Word1024x630nsmall.jpg",
             description: "Add flyout menus to Quick Command Bars for quicker access."
         },
         {
-            image: "public/images/carousel/Word1024x630o.png",
-            thumbnail: "public/images/carousel/Word1024x630osmall.jpg",
+            image: "images/carousel/Word1024x630o.png",
+            thumbnail: "images/carousel/Word1024x630osmall.jpg",
             description: "Show or hide individual Quick Command Bars, easily add new commands, rename QCBs, change display order."
         },
         {
-            image: "public/images/carousel/Word1024x630p.png",
-            thumbnail: "public/images/carousel/Word1024x630psmall.jpg",
+            image: "images/carousel/Word1024x630p.png",
+            thumbnail: "images/carousel/Word1024x630psmall.jpg",
             description: "Custom colour themes supplied. User editable .xml file included, make your own themes!"
         }
     ];
 
     const mobileSlides = [
         {
-            image: "public/images/carousel/Word1024x630a.png",
+            image: "images/carousel/Word1024x630a.png",
             thumbnail: "",
             description: "Use function keys to open pull down menus and run commands. Use function keys to adjust values in dialogue boxes"
         },
         {
-            image: "public/images/carousel/Word1024x630b.png",
+            image: "images/carousel/Word1024x630b.png",
             thumbnail: "",
             description: "Use function keys to access drop down menus and menu commands."
         },
         {
-            image: "public/images/carousel/Word1024x630g.png",
+            image: "images/carousel/Word1024x630g.png",
             thumbnail: "",
             description: "Keyboard Drop Down Menu (KDDM) - fully customisable keyboard menu. 12 KDDMs to customise, each with 48 commands. Map any command to any key. Rename KDDM menu titles - e.g. change \"F1 File\" to \"F1 Main\"."
         },
         {
-            image: "public/images/carousel/Word1024x630d2.png",
+            image: "images/carousel/Word1024x630d2.png",
             thumbnail: "",
             description: "Quick Command Bars (QCB) - fully customisable command bars. Create custom command bars with 11 commands per bar. Easily change titles of QCBs. Display up to 12 QCBs at one time - 132 commands, all accessible with the mouse too!"
         },
         {
-            image: "public/images/carousel/Word1024x630n.png",
+            image: "images/carousel/Word1024x630n.png",
             thumbnail: "",
             description: "Add flyout menus to Quick Command Bars for quicker access."
         },
         {
-            image: "public/images/carousel/Word1024x630o.png",
+            image: "images/carousel/Word1024x630o.png",
             thumbnail: "",
             description: "Show or hide individual Quick Command Bars, easily add new commands, rename QCBs, change display order."
         },
         {
-            image: "public/images/carousel/Word1024x630p.png",
+            image: "images/carousel/Word1024x630p.png",
             thumbnail: "",
             description: "Custom colour themes supplied. User editable .xml file included, make your own themes!"
         }
@@ -229,18 +229,18 @@ const Home: React.FC = () => {
 
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word2A.png">
+                    <ImagePreview fullImageSrc="images/Word2A.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word2Asmall.gif"
+                                    src="images/Word2Asmall.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and QCB"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -259,18 +259,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word1blue.png">
+                    <ImagePreview fullImageSrc="images/Word1blue.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word1bluesmall.gif"
+                                    src="images/Word1bluesmall.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -289,18 +289,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word1336I2.png">
+                    <ImagePreview fullImageSrc="images/Word1336I2.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word1336I2small.gif"
+                                    src="images/Word1336I2small.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -322,18 +322,18 @@ const Home: React.FC = () => {
             {/* Second row of sections */}
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word3A.PNG">
+                    <ImagePreview fullImageSrc="images/Word3A.PNG">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word3Asmall.gif"
+                                    src="images/Word3Asmall.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and QCB"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -350,18 +350,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/AdvancedFind.gif" previewId="preview-container2">
+                    <ImagePreview fullImageSrc="images/AdvancedFind.gif" previewId="preview-container2">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word6small.gif"
+                                    src="images/Word6small.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -380,18 +380,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/QCBAddCommand2.gif" previewId="preview-container2">
+                    <ImagePreview fullImageSrc="images/QCBAddCommand2.gif" previewId="preview-container2">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/QCBAddCommandsmall.gif"
+                                    src="images/QCBAddCommandsmall.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -413,18 +413,18 @@ const Home: React.FC = () => {
             {/* Third row of sections */}
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word5.png">
+                    <ImagePreview fullImageSrc="images/Word5.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word5small.gif"
+                                    src="images/Word5small.gif"
                                     className="slide-image2"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -442,18 +442,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word6.png" previewId="preview-container2">
+                    <ImagePreview fullImageSrc="images/Word6.png" previewId="preview-container2">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word6small2.gif"
+                                    src="images/Word6small2.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"
@@ -469,18 +469,18 @@ const Home: React.FC = () => {
                 </div>
 
                 <div className="section">
-                    <ImagePreview fullImageSrc="public/images/Word7.png">
+                    <ImagePreview fullImageSrc="images/Word7.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
-                                    src="public/images/Word7small.gif"
+                                    src="images/Word7small.gif"
                                     className="slide-image"
                                     alt="Word Add-in Menu Bar and Drop Down Menu With Flyout Menu"
                                 />
                             </div>
                             <div className="Magnifying">
                                 <img
-                                    src="public/images/3d-magnifier.svg"
+                                    src="images/3d-magnifier.svg"
                                     height="50"
                                     width="50"
                                     alt="Zoom Icon"

@@ -51,7 +51,7 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
         setIsVisible(false);
     };
 
-    const handleBackdropClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleBackdropClick = (_: React.MouseEvent<HTMLDivElement>) => {
         // Close when clicking anywhere in the preview container
         // This includes both the backdrop and the image itself
         hidePreview();
