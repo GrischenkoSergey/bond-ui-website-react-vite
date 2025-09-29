@@ -627,46 +627,27 @@ body.light-theme footer .copybox2 {
         display: none;
     }
 
-    .section {
-        width: 100%;
-        flex-direction: column;
-    }
-
-    .image-wrapper,
-    .sub-section {
-        width: 100%;
-    }
-
-    /* Fix image wrapper to contain images properly */
     .image-wrapper {
         position: relative;
         overflow: hidden;
-        /* Changed from auto to hidden */
         height: auto;
-        /* Changed from 40vh to auto */
-        min-height: 250px;
-        /* Ensure minimum height */
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: #f0f0f0;
+        display: block;
+        background-color: #efeeee;
+        width: 100%;
+        line-height: 0;
     }
 
-    /* Make images responsive and fit their containers */
     .image-wrapper img.slide-image,
     .image-wrapper img.slide-image2 {
         width: 100%;
-        /* Fit container width */
         height: auto;
-        /* Maintain aspect ratio */
         max-width: 100%;
-        object-fit: contain;
-        /* Contain entire image within bounds */
-        object-position: center;
-        /* Center the image */
         display: block;
+        vertical-align: top;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
     }
 
     /* Alternative: If you want images to fill and crop */
@@ -678,6 +659,29 @@ body.light-theme footer .copybox2 {
         object-fit: cover;
         /* Fill area and crop if needed */
         object-position: center top;
+    }
+
+    .image-container {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        display: block;
+        line-height: 0;
+        /* Remove line-height gap */
+        background-color: #efeeee;
+        /* Match section background */
+    }
+
+    .image-container img {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        max-width: 100%;
+        vertical-align: top;
     }
 
     .scrollmenu {
@@ -754,12 +758,33 @@ body.light-theme footer .copybox2 {
         gap: 20px;
     }
 
+    .section {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        flex-direction: column;
+        display: flex;
+        align-items: stretch;
+        background-color: #efeeee;
+        box-shadow: 0 0 11px 0 #aaaaaa;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .image-wrapper,
+    .sub-section {
+        width: 100%;
+    }
+
     .sectionrow {
         display: flex;
-        width: 100%;
+        width: calc(100% - 30px);
+        max-width: 100%;
+        margin: 20px auto;
         flex-direction: column;
         gap: 40px;
-        margin: 20px 0;
+        padding: 0 15px;
+        align-items: center;
     }
 
     .sectionheadtext {
@@ -791,16 +816,16 @@ body.light-theme footer .copybox2 {
         min-height: auto;
     }
 
-    /* Sub-section proper sizing */
     .sub-section {
         background-color: #28013e;
         transition: background-color 1s ease;
         height: auto;
-        /* Changed from calc(100% - 253px) to auto */
         min-height: 200px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
         padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .sub-section h2 {
@@ -816,8 +841,11 @@ body.light-theme footer .copybox2 {
     }
 }
 
-/* Additional fix for very small screens */
 @media screen and (max-width: 560px) {
+    .sectionrow {
+        padding: 0 10px;
+    }
+
     .image-wrapper {
         min-height: 200px;
     }
@@ -849,19 +877,39 @@ body.light-theme footer .copybox2 {
     }
 }
 
-/* Landscape mobile adjustments */
+/* Landscape mobile mode - maintain same behavior */
 @media (orientation: landscape) and (max-width: 1150px) {
+    .sectionrow {
+        margin: 20px auto;
+        padding: 0 20px;
+        align-items: center;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        align-items: stretch;
+    }
+
+    /* Adjust image height for landscape */
     .image-wrapper {
         min-height: 200px;
         max-height: 50vh;
-        /* Limit height in landscape */
     }
 
     .image-wrapper img.slide-image,
     .image-wrapper img.slide-image2 {
         max-height: 50vh;
-        width: auto;
-        max-width: 100%;
+        width: 100%;
+        height: auto;
+    }
+
+    /* Sub-section continues to match image width */
+    .sub-section {
+        padding: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
 }
 
@@ -1055,6 +1103,31 @@ div.scrollmenu.show a:first-child {
         left: 10px;
         /* Center the menu */
     }
+
+    .sectionrow {
+        width: calc(100% - 16px);
+        padding: 0 8px;
+    }
+
+    .image-wrapper {
+        min-height: unset;
+        background-color: #efeeee;
+    }
+
+    .sub-section {
+        padding: 12px;
+        min-height: 120px;
+    }
+
+    .sub-section h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .sub-section p {
+        font-size: 0.9rem;
+        line-height: 1.3;
+    }
 }
 
 @media screen and (max-width: 400px) {
@@ -1070,5 +1143,177 @@ div.scrollmenu.show a:first-child {
         /* Reduce padding slightly for smaller screens */
         font-size: 1rem;
         /* Slightly smaller font */
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 900px) and (orientation: portrait) {
+    .sectionrow {
+        width: calc(100% - 40px);
+        padding: 0 20px;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-wrapper {
+        min-height: unset;
+    }
+
+    .sub-section {
+        padding: 25px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 1150px) and (orientation: landscape) {
+    .sectionrow {
+        width: calc(100% - 40px);
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .section {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .image-wrapper {
+        min-height: unset;
+        max-height: 45vh;
+        overflow: hidden;
+    }
+
+    .image-wrapper img.slide-image,
+    .image-wrapper img.slide-image2 {
+        width: 100%;
+        height: auto;
+        max-height: 45vh;
+        object-fit: cover;
+    }
+
+    .sub-section {
+        padding: 20px;
+        min-height: 180px;
+    }
+}
+
+/* Small tablets and large phones */
+@media screen and (min-width: 400px) and (max-width: 599px) {
+    .sectionrow {
+        width: calc(100% - 30px);
+        padding: 0 15px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        min-height: 220px;
+    }
+}
+
+/* Very small screens (phones) */
+@media screen and (max-width: 399px) {
+    .sectionrow {
+        width: calc(100% - 20px);
+        padding: 0 10px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        min-height: 200px;
+    }
+
+    .sub-section {
+        padding: 15px;
+        min-height: 150px;
+    }
+
+    .sub-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .sub-section p {
+        font-size: 1rem;
+    }
+}
+
+/* Ensure smooth transitions between orientations */
+.section,
+.image-wrapper,
+.sub-section {
+    transition: all 0.3s ease;
+}
+
+/* Force recalculation on orientation change */
+@media screen and (orientation: portrait) {
+    .section {
+        width: 100% !important;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .section {
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .sectionrow {
+        width: calc(100% - 20px);
+        padding: 0 10px;
+        gap: 30px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    /* Remove any minimum height constraints */
+    .image-wrapper {
+        min-height: unset;
+        height: auto;
+        background-color: #efeeee;
+    }
+
+    .image-wrapper img.slide-image,
+    .image-wrapper img.slide-image2 {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    .sub-section {
+        padding: 15px;
+        min-height: 150px;
+    }
+
+    .sub-section h2 {
+        font-size: 1.1rem;
+    }
+
+    .sub-section p {
+        font-size: 0.95rem;
+        line-height: 1.4;
+    }
+}
+
+@media screen and (min-width: 376px) and (max-width: 599px) {
+    .sectionrow {
+        width: calc(100% - 30px);
+        padding: 0 15px;
+    }
+
+    .section {
+        width: 100%;
+    }
+
+    .image-wrapper {
+        min-height: unset;
     }
 }
