@@ -395,11 +395,73 @@ main a {
     border-top-left-radius: 10px;
 }
 
+/* Hide magnifier icon on screens smaller than 1366x1024 */
+
+/* Hide magnifier on screens with width less than 1366px */
+@media screen and (max-width: 1365px) {
+    .Magnifying {
+        display: none !important;
+    }
+}
+
+/* Hide magnifier on screens with height less than 1024px */
+@media screen and (max-height: 1023px) {
+    .Magnifying {
+        display: none !important;
+    }
+}
+
+/* Alternative: Hide magnifier when EITHER dimension is too small */
+/* Use this if you want to hide when width OR height is below threshold */
+@media screen and (max-width: 1365px),
+screen and (max-height: 1023px) {
+    .Magnifying {
+        display: none !important;
+    }
+}
+
+/* Show magnifier only on large screens (1366x1024 or larger) */
+@media screen and (min-width: 1366px) and (min-height: 1024px) {
+    .Magnifying {
+        display: block !important;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 11;
+    }
+}
+
 .Magnifying {
     position: absolute;
     bottom: 10px;
     left: 10px;
     z-index: 11;
+    display: block;
+}
+
+/* Hide on mobile and tablets (max-width: 1150px already hides most) */
+@media only screen and (max-width: 1150px) {
+    .Magnifying {
+        display: none !important;
+    }
+}
+
+/* Hide on small desktop screens and laptops */
+@media screen and (min-width: 1151px) and (max-width: 1365px) {
+    .Magnifying {
+        display: none !important;
+    }
+}
+
+/* Hide on screens with limited height (like small laptops in landscape) */
+@media screen and (min-width: 1151px) and (max-height: 1023px) {
+    .Magnifying {
+        display: block !important;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 11;
+    }
 }
 
 .slide-image {

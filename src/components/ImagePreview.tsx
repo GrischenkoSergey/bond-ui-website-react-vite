@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 interface ImagePreviewProps {
     children: React.ReactNode;
@@ -12,9 +12,39 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
     previewId = 'preview-container'
 }) => {
     const [isVisible, setIsVisible] = useState(false);
+    const [isPreviewEnabled, setIsPreviewEnabled] = useState(true);
+
+    useEffect(() => {
+        const checkScreenSize = () => {
+            // Enable preview on desktop screens (width >= 1151px)
+            // Disable only on mobile/tablet (width < 1151px)
+            const isLargeScreen = window.innerWidth >= 1151;
+            setIsPreviewEnabled(isLargeScreen);
+
+            // Close preview if screen becomes too small
+            if (!isLargeScreen && isVisible) {
+                setIsVisible(false);
+            }
+        };
+
+        // Check on mount
+        checkScreenSize();
+
+        // Check on resize and orientation change
+        window.addEventListener('resize', checkScreenSize);
+        window.addEventListener('orientationchange', checkScreenSize);
+
+        return () => {
+            window.removeEventListener('resize', checkScreenSize);
+            window.removeEventListener('orientationchange', checkScreenSize);
+        };
+    }, [isVisible]);
 
     const showPreview = () => {
-        setIsVisible(true);
+        // Only show preview if screen is large enough
+        if (isPreviewEnabled) {
+            setIsVisible(true);
+        }
     };
 
     const hidePreview = () => {
@@ -39,7 +69,7 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
                 {children}
             </div>
 
-            {isVisible && (
+            {isVisible && isPreviewEnabled && (
                 <div
                     id={previewId}
                     style={{
