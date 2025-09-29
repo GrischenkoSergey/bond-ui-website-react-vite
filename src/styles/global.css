@@ -432,7 +432,9 @@ screen and (max-height: 1023px) {
 }
 
 /* Show magnifier only on large screens (1366x1024 or larger) */
-@media screen and (min-width: 1366px) and (min-height: 1024px) {
+@media screen and (min-width: 1366px) {
+
+    /* and (min-height: 1024px) */
     .Magnifying {
         display: block !important;
         position: absolute;
@@ -451,7 +453,9 @@ screen and (max-height: 1023px) {
 }
 
 /* Hide on mobile and tablets (max-width: 1150px already hides most) */
-@media only screen and ((max-width: 1150px) or (max-height: 1023px)) {
+@media only screen and (max-width: 1150px) {
+
+    /* or (max-height: 1023px) */
     .Magnifying {
         display: none !important;
     }

@@ -322,7 +322,7 @@ const Home: React.FC = () => {
             {/* Second row of sections */}
             <div className="sectionrow">
                 <div className="section">
-                    <ImagePreview fullImageSrc="images/Word3A.PNG">
+                    <ImagePreview fullImageSrc="images/Word3A.png">
                         <div className="image-wrapper">
                             <div className="image-container">
                                 <img
