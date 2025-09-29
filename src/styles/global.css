@@ -178,6 +178,17 @@ main .sectionmanual h2 {
     margin: 0 0 30px 30px;
 }
 
+/* Enhanced list styling for manual pages */
+.sectionmanual ul li strong {
+    color: #50bafc;
+    font-weight: 600;
+}
+
+.sectionmanual ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
 .sectionmanual p {
     margin: 0 30px 10px 30px;
 }
@@ -659,6 +670,29 @@ body.light-theme footer .copybox2 {
     display: flex;
     align-items: center;
     transition: display 1s ease;
+}
+
+/* Light theme support for manual tips */
+body.light-theme .manual-tips {
+    background: rgba(4, 95, 151, 0.1);
+    border-left: 4px solid #045f97;
+}
+
+body.light-theme .manual-tips h2 {
+    color: #3c3c00;
+}
+
+body.light-theme .sectionmanual ul li strong {
+    color: #045f97;
+}
+
+/* Light theme for Buy Now page */
+body.light-theme .buy-now-section h1 {
+    color: #3c3c00;
+}
+
+body.light-theme .buy-now-features li:before {
+    color: #045f97;
 }
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
@@ -1430,6 +1464,15 @@ div.scrollmenu.show a:first-child {
         margin-bottom: 10px;
     }
 
+    .sectionmanual ul li strong {
+        display: inline-block;
+    }
+
+    .sectionmanual ul ul {
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
     .sectionmanual p {
         margin: 0 15px 15px 15px;
         font-size: 1.1rem;
@@ -1451,6 +1494,58 @@ div.scrollmenu.show a:first-child {
         max-width: 100%;
         height: auto;
     }
+
+    .manual-tips {
+        padding: 20px 15px;
+        margin: 20px 15px;
+    }
+
+    .manual-tips h2 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+
+    .manual-tips p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 12px;
+    }
+
+    .buy-now-section {
+        margin: 20px 15px;
+    }
+
+    .buy-now-section h1 {
+        font-size: 1.6rem;
+        margin-bottom: 15px;
+    }
+
+    .buy-now-section p {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+
+    .buy-now-features {
+        margin: 15px 15px 25px 15px;
+    }
+
+    .buy-now-features li {
+        font-size: 1.1rem;
+        padding: 6px 0;
+    }
+
+    /* Make buy buttons stack vertically on mobile */
+    .buynowbar {
+        flex-direction: column;
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .buynowbar p {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 10px;
+    }
 }
 
 /* Extra small devices */
@@ -1471,6 +1566,13 @@ div.scrollmenu.show a:first-child {
 
     .sectionmanual ul li {
         font-size: 1rem;
+        margin-bottom: 8px;
+        line-height: 1.5;
+    }
+
+    .sectionmanual ul li strong {
+        display: block;
+        margin-bottom: 3px;
     }
 
     .sectionmanual p {
@@ -1487,6 +1589,56 @@ div.scrollmenu.show a:first-child {
     .manual-image-container {
         padding: 0 10px;
     }
+
+    .manual-tips {
+        padding: 15px 10px;
+        margin: 15px 10px;
+    }
+
+    .manual-tips h2 {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .manual-tips p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .buy-now-section {
+        margin: 15px 10px;
+    }
+
+    .buy-now-section h1 {
+        font-size: 1.4rem;
+        margin-bottom: 12px;
+    }
+
+    .buy-now-section p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    .buy-now-features {
+        margin: 12px 10px 20px 10px;
+    }
+
+    .buy-now-features li {
+        font-size: 1rem;
+        padding: 5px 0;
+        line-height: 1.5;
+    }
+
+    .buynowbar {
+        padding: 15px 10px;
+        gap: 12px;
+    }
+
+    .buynowbar p {
+        font-size: 1rem;
+    }
 }
 
 /* Landscape mode for tablets/phones */
@@ -1501,4 +1653,282 @@ div.scrollmenu.show a:first-child {
         width: auto;
         max-width: 100%;
     }
+}
+
+/* Program Picker page specific styles */
+.program-picker-intro,
+.program-picker-features,
+.program-picker-details,
+.program-picker-cta {
+    margin-bottom: 30px;
+}
+
+.program-picker-intro h2,
+.program-picker-features h2,
+.program-picker-details h2 {
+    color: #ffff66;
+    margin-bottom: 15px;
+}
+
+.program-picker-features .feature-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.program-picker-features .feature-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.program-picker-features .feature-list li:last-child {
+    border-bottom: none;
+}
+
+.program-picker-features .feature-list li:hover {
+    padding-left: 10px;
+    color: #50bafc;
+}
+
+.program-picker-features .feature-list li:before {
+    content: "▸ ";
+    color: #50bafc;
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.program-picker-cta {
+    background: rgba(80, 186, 252, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    border-left: 4px solid #50bafc;
+}
+
+.program-picker-cta p {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/* Light theme support */
+body.light-theme .program-picker-intro h2,
+body.light-theme .program-picker-features h2,
+body.light-theme .program-picker-details h2 {
+    color: #3c3c00;
+}
+
+body.light-theme .program-picker-features .feature-list li {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .program-picker-features .feature-list li:before {
+    color: #045f97;
+}
+
+body.light-theme .program-picker-features .feature-list li:hover {
+    color: #045f97;
+}
+
+body.light-theme .program-picker-cta {
+    background: rgba(4, 95, 151, 0.1);
+    border-left: 4px solid #045f97;
+}
+
+/* Mobile responsive styles for Program Picker page */
+
+@media only screen and (max-width: 1150px) {
+
+    .program-picker-intro,
+    .program-picker-features,
+    .program-picker-details,
+    .program-picker-cta {
+        margin-bottom: 20px;
+    }
+
+    .program-picker-intro h2,
+    .program-picker-features h2,
+    .program-picker-details h2 {
+        font-size: 1.3rem;
+        margin: 20px 15px 15px 15px;
+    }
+
+    .program-picker-intro p,
+    .program-picker-details p {
+        margin: 0 15px 15px 15px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .program-picker-features .feature-list {
+        margin: 0 15px;
+    }
+
+    .program-picker-features .feature-list li {
+        font-size: 1.1rem;
+        padding: 12px 0;
+    }
+
+    .program-picker-cta {
+        margin: 20px 15px;
+        padding: 15px;
+    }
+
+    .program-picker-cta p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Extra small devices */
+@media only screen and (max-width: 600px) {
+
+    .program-picker-intro,
+    .program-picker-features,
+    .program-picker-details,
+    .program-picker-cta {
+        margin-bottom: 15px;
+    }
+
+    .program-picker-intro h2,
+    .program-picker-features h2,
+    .program-picker-details h2 {
+        font-size: 1.2rem;
+        margin: 15px 10px 10px 10px;
+    }
+
+    .program-picker-intro p,
+    .program-picker-details p {
+        margin: 0 10px 12px 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .program-picker-features .feature-list {
+        margin: 0 10px;
+    }
+
+    .program-picker-features .feature-list li {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    .program-picker-features .feature-list li:hover {
+        padding-left: 5px;
+    }
+
+    .program-picker-cta {
+        margin: 15px 10px;
+        padding: 12px;
+    }
+
+    .program-picker-cta p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .sectionmanual ul ul {
+        margin-left: 15px;
+    }
+}
+
+/* Landscape mode for tablets/phones */
+@media only screen and (max-width: 1150px) and (orientation: landscape) {
+
+    .program-picker-intro p,
+    .program-picker-details p,
+    .program-picker-cta p {
+        line-height: 1.5;
+    }
+
+    .program-picker-features .feature-list li {
+        padding: 8px 0;
+    }
+
+    .manual-tips {
+        margin: 15px;
+        padding: 15px;
+    }
+
+    .manual-tips p {
+        line-height: 1.5;
+    }
+
+    .sectionmanual ul li {
+        line-height: 1.5;
+    }
+
+    .buy-now-section {
+        margin: 15px;
+    }
+
+    .buy-now-section p,
+    .buy-now-features li {
+        line-height: 1.5;
+    }
+}
+
+/* Program Picker Manual page specific styles */
+
+.manual-tips {
+    background: rgba(80, 186, 252, 0.1);
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 4px solid #50bafc;
+    margin-top: 30px;
+}
+
+.manual-tips h2 {
+    color: #ffff66;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.manual-tips p {
+    margin: 0 0 15px 0;
+}
+
+.manual-tips p:last-child {
+    margin-bottom: 0;
+}
+
+/* Buy Now page specific styles */
+
+.buy-now-section {
+    margin-bottom: 30px;
+}
+
+.buy-now-section h1 {
+    font-size: 2rem;
+    color: #ffff66;
+    margin-bottom: 20px;
+}
+
+.buy-now-section p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.buy-now-section .features-intro {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.buy-now-features {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.buy-now-features li {
+    padding: 8px 0;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.buy-now-features li:before {
+    content: "✓ ";
+    color: #50bafc;
+    font-weight: bold;
+    margin-right: 8px;
 }
