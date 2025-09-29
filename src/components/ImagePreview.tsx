@@ -18,7 +18,7 @@ const ImagePreview: React.FC<ImagePreviewProps> = ({
         const checkScreenSize = () => {
             // Enable preview on desktop screens (width >= 1151px)
             // Disable only on mobile/tablet (width < 1151px)
-            const isLargeScreen = window.innerWidth >= 1151;
+            const isLargeScreen = window.innerWidth >= 1151 && window.innerHeight >= 1024;
             setIsPreviewEnabled(isLargeScreen);
 
             // Close preview if screen becomes too small

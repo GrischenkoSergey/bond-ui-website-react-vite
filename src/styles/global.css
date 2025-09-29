@@ -440,21 +440,31 @@ screen and (max-height: 1023px) {
 }
 
 /* Hide on mobile and tablets (max-width: 1150px already hides most) */
-@media only screen and (max-width: 1150px) {
+@media only screen and ((max-width: 1150px) or (max-height: 1023px)) {
     .Magnifying {
         display: none !important;
     }
 }
 
 /* Hide on small desktop screens and laptops */
-@media screen and (min-width: 1151px) and (max-width: 1365px) {
+/* @media screen and (min-width: 1151px) and (max-width: 1365px) {
     .Magnifying {
         display: none !important;
     }
-}
+} */
 
 /* Hide on screens with limited height (like small laptops in landscape) */
-@media screen and (min-width: 1151px) and (max-height: 1023px) {
+/* @media screen and (min-width: 1151px) and (max-height: 1023px) {
+    .Magnifying {
+        display: block !important;
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        z-index: 11;
+    }
+} */
+
+@media screen and (min-width: 1151px) and (min-height: 1024px) {
     .Magnifying {
         display: block !important;
         position: absolute;
@@ -1377,5 +1387,118 @@ div.scrollmenu.show a:first-child {
 
     .image-wrapper {
         min-height: unset;
+    }
+}
+
+/* Manual page image container for responsive images */
+
+.manual-image-container {
+    width: 100%;
+    max-width: 1336px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.manual-image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Mobile responsive styles for manual pages */
+@media only screen and (max-width: 1150px) {
+    main .sectionmanual h1 {
+        font-size: 1.5rem;
+        margin: 20px 15px 15px 15px;
+    }
+
+    main .sectionmanual h2 {
+        font-size: 1.3rem;
+        margin: 25px 15px 15px 15px;
+    }
+
+    .sectionmanual ul {
+        margin: 0 15px 20px 15px;
+        padding-left: 0;
+    }
+
+    .sectionmanual ul li {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .sectionmanual p {
+        margin: 0 15px 15px 15px;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .sectionmanual .manualdownloadaddin {
+        margin: 10px 15px 20px 15px;
+    }
+
+    .manual-image-container {
+        margin: 15px 0;
+        padding: 0 15px;
+    }
+
+    /* Ensure images don't overflow on mobile */
+    .manual-image-container img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Extra small devices */
+@media only screen and (max-width: 600px) {
+    main .sectionmanual h1 {
+        font-size: 1.3rem;
+        margin: 15px 10px 10px 10px;
+    }
+
+    main .sectionmanual h2 {
+        font-size: 1.2rem;
+        margin: 20px 10px 10px 10px;
+    }
+
+    .sectionmanual ul {
+        margin: 0 10px 15px 10px;
+    }
+
+    .sectionmanual ul li {
+        font-size: 1rem;
+    }
+
+    .sectionmanual p {
+        margin: 0 10px 12px 10px;
+        font-size: 1rem;
+        line-height: 1.5;
+    }
+
+    .sectionmanual .manualdownloadaddin {
+        margin: 10px 10px 15px 10px;
+        max-width: 100%;
+    }
+
+    .manual-image-container {
+        padding: 0 10px;
+    }
+}
+
+/* Landscape mode for tablets/phones */
+@media only screen and (max-width: 1150px) and (orientation: landscape) {
+    .manual-image-container {
+        max-width: 90%;
+        margin: 15px auto;
+    }
+
+    .manual-image-container img {
+        max-height: 70vh;
+        width: auto;
+        max-width: 100%;
     }
 }
