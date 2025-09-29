@@ -378,14 +378,21 @@ main a {
     cursor: pointer;
 }
 
+/* Ensure image container in ImagePreview component */
 .image-container {
     width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
 }
 
 .image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
-    width: 100%;
 }
 
 .Magnifying {
@@ -630,29 +637,47 @@ body.light-theme footer .copybox2 {
         width: 100%;
     }
 
+    /* Fix image wrapper to contain images properly */
     .image-wrapper {
         position: relative;
-        overflow-x: auto;
-        overflow-y: auto;
-        height: 40vh;
+        overflow: hidden;
+        /* Changed from auto to hidden */
+        height: auto;
+        /* Changed from 40vh to auto */
+        min-height: 250px;
+        /* Ensure minimum height */
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #f0f0f0;
     }
 
-    .image-wrapper img.slide-image {
-        width: 1336px;
-        height: auto;
-        min-height: 100%;
-        object-fit: cover;
-        object-position: left top;
-    }
-
+    /* Make images responsive and fit their containers */
+    .image-wrapper img.slide-image,
     .image-wrapper img.slide-image2 {
-        width: 1336px;
+        width: 100%;
+        /* Fit container width */
         height: auto;
-        min-height: 100%;
+        /* Maintain aspect ratio */
+        max-width: 100%;
+        object-fit: contain;
+        /* Contain entire image within bounds */
+        object-position: center;
+        /* Center the image */
+        display: block;
+    }
+
+    /* Alternative: If you want images to fill and crop */
+    .image-wrapper.fill-mode img.slide-image,
+    .image-wrapper.fill-mode img.slide-image2 {
+        width: 100%;
+        height: 100%;
+        min-height: 250px;
         object-fit: cover;
-        object-position: left top;
+        /* Fill area and crop if needed */
+        object-position: center top;
     }
 
     .scrollmenu {
@@ -766,10 +791,12 @@ body.light-theme footer .copybox2 {
         min-height: auto;
     }
 
-    /* Ensure sub-sections have proper styling in mobile */
+    /* Sub-section proper sizing */
     .sub-section {
         background-color: #28013e;
         transition: background-color 1s ease;
+        height: auto;
+        /* Changed from calc(100% - 253px) to auto */
         min-height: 200px;
         border-bottom-left-radius: 10px;
         border-bottom-right-radius: 10px;
@@ -779,35 +806,35 @@ body.light-theme footer .copybox2 {
     .sub-section h2 {
         font-size: 1.3rem;
         margin-bottom: 15px;
+        color: #ffff66;
     }
 
     .sub-section p {
         font-size: 1.1rem;
-        line-height: 1.4;
+        line-height: 1.5;
         margin-bottom: 10px;
     }
 }
 
+/* Additional fix for very small screens */
 @media screen and (max-width: 560px) {
-    .mobile-header-text h1:first-child {
-        font-size: 1.8rem;
+    .image-wrapper {
+        min-height: 200px;
     }
 
-    .mobile-header-text h1:nth-child(2),
-    .mobile-header-text h1:last-child {
-        font-size: 1.3rem;
+    .sub-section {
+        padding: 15px;
+        min-height: 150px;
     }
 
-    footer {
-        padding-bottom: env(SAFE-AREA-INSET-BOTTOM, 20px);
+    .sub-section h2 {
+        font-size: 1.2rem;
+    }
+
+    .sub-section p {
+        font-size: 1rem;
     }
 }
-
-/* @media (orientation: landscape) and (max-width: 1151px) {
-    .mobile-header-text h1 {
-        font-size: 1.3rem !important;
-    }
-} */
 
 /* Additional landscape-specific override for all landscape orientations */
 @media screen and (orientation: landscape) and (max-width: 1151px) {
@@ -819,6 +846,22 @@ body.light-theme footer .copybox2 {
         align-items: center !important;
         justify-content: flex-start !important;
         text-align: left !important;
+    }
+}
+
+/* Landscape mobile adjustments */
+@media (orientation: landscape) and (max-width: 1150px) {
+    .image-wrapper {
+        min-height: 200px;
+        max-height: 50vh;
+        /* Limit height in landscape */
+    }
+
+    .image-wrapper img.slide-image,
+    .image-wrapper img.slide-image2 {
+        max-height: 50vh;
+        width: auto;
+        max-width: 100%;
     }
 }
 
@@ -1029,7 +1072,3 @@ div.scrollmenu.show a:first-child {
         /* Slightly smaller font */
     }
 }
-
-/* .mobile-header-text h1 {
-    font-size: 1.3rem !important;
-} */
